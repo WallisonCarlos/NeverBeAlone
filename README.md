@@ -1,6 +1,11 @@
 # NeverBeAlone
-Projeto sem nenhum fim lucrativo, que tem como objetivo ajudar pessoas com problemas psicológicos. Em apoio a programas de apoio e valorização da vida.  Essa aplicação pertence a comunidade Never Be Alone. Tendo em vista a finalidade o código será aberto, porém, sua utilização fora do projeto deve ser perante a autorização da comunidade. Essa ferramenta tem por finalidade se
+
+Projeto sem nenhum fim lucrativo, que tem como objetivo ajudar pessoas com problemas psicológicos. Em apoio a programas de apoio e valorização da vida.  Essa aplicação pertence a comunidade Never Be Alone. Tendo em vista a finalidade o código será aberto, porém, sua utilização fora do projeto deve ser perante a autorização da comunidade. Essa ferramenta tem por finalidade ser mais um apoio e amparo a estes programas.
+
+Acredito que nós não estamos sozinhos. Se sentir sozinho sem rumo, não é algo bom, não mesmo. Você não saber qual rumo tomar, não acha uma saída. Seja você uma pessoa que se contra nessa situação ou alguém seu que se encontra nessa situação. Nós não estamos sós! Sim, existem pessoas que estão ali por você, que vão te estender a mão, te levantar do canto escuro e te levar até a porta e te mostar a luz da vida. Seja você essa pessoa que precisa que alguém te estenda a mão, ou seja, você essa pessoa que quer estender a mão. Esse projeto tem por finalidade ajudar ainda mais isso acontecer. Porque lembre-se nós nunca estamos sozinhos!
+
 ## Arquitetura
+
 ![Diagrama em branco](https://user-images.githubusercontent.com/8182066/81455981-41cf8700-9167-11ea-9d9a-eff09a665cb5.png)
 
 
