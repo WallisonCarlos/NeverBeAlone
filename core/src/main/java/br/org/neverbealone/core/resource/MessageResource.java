@@ -34,7 +34,7 @@ public class MessageResource implements Resource<Message>{
 
 	@Override
 	@GetMapping("/{id}")
-	public Message show(@PathVariable("id") Long id) throws NotFoundEntityException {
+	public Message show(@PathVariable("id") String id) throws NotFoundEntityException {
 		return messageService.findOneNotDeletedBy(id);
 	}
 
@@ -46,13 +46,13 @@ public class MessageResource implements Resource<Message>{
 
 	@Override
 	@PutMapping("/{id}")
-	public Message update(@RequestBody @Valid Message entity, @PathVariable("id") Long id) throws NotFoundEntityException {
+	public Message update(@RequestBody @Valid Message entity, @PathVariable("id") String id) throws NotFoundEntityException {
 		return messageService.update(entity, id);
 	}
 
 	@Override
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+	public ResponseEntity<?> delete(@PathVariable("id") String id) {
 		return messageService.delete(id);
 	}
 	

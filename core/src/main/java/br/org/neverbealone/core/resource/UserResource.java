@@ -34,7 +34,7 @@ public class UserResource implements Resource<User>{
 
 	@Override
 	@GetMapping("/{id}")
-	public User show(@PathVariable("id") Long id) throws NotFoundEntityException {
+	public User show(@PathVariable("id") String id) throws NotFoundEntityException {
 		return userService.findOneNotDeletedBy(id);
 	}
 
@@ -46,13 +46,13 @@ public class UserResource implements Resource<User>{
 
 	@Override
 	@PutMapping("/{id}")
-	public User update(@RequestBody @Valid User entity, @PathVariable("id") Long id) throws NotFoundEntityException {
+	public User update(@RequestBody @Valid User entity, @PathVariable("id") String id) throws NotFoundEntityException {
 		return userService.update(entity, id);
 	}
 
 	@Override
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+	public ResponseEntity<?> delete(@PathVariable("id") String id) {
 		return userService.delete(id);
 	}
 

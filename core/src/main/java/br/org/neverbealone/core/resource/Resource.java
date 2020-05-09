@@ -8,8 +8,8 @@ import br.org.neverbealone.core.exception.NotFoundEntityException;
 
 public interface Resource<E> {
 	public List<E> index();
-	public E show(Long id) throws NotFoundEntityException ;
+	public E show(String id) throws NotFoundEntityException ;
 	public E create(E entity);
-	public E update(E entity, Long id) throws NotFoundEntityException ;
-	public ResponseEntity<?> delete(Long id);
+	public E update(E entity, String id) throws NotFoundEntityException ;
+	public ResponseEntity<?> delete(String id);
 }

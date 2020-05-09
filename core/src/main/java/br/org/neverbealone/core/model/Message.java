@@ -5,10 +5,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 import java.time.ZonedDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import br.org.neverbealone.core.model.enumeration.ChannelMessageEnum;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,12 +24,13 @@ import lombok.ToString;
 public class Message {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private Long id;
+	private String id;
 	@ManyToOne
 	private User from;
 	@ManyToOne
 	private User to;
+	@Enumerated
+	private ChannelMessageEnum channel;
 	private String content;
 	private ZonedDateTime created;
 	private ZonedDateTime updated;

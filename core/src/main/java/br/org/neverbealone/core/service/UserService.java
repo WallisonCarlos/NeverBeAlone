@@ -34,7 +34,7 @@ public class UserService implements br.org.neverbealone.core.service.Service<Use
 	}
 
 	@Override
-	public User findOneBy(Long id) throws NotFoundEntityException {
+	public User findOneBy(String id) throws NotFoundEntityException {
 		Optional<User> user = userRepository.findById(id);
 		if (user.isPresent()) {
 			return user.get();
@@ -44,7 +44,7 @@ public class UserService implements br.org.neverbealone.core.service.Service<Use
 	}
 	
 	@Override
-	public User findOneNotDeletedBy(Long id) throws NotFoundEntityException {
+	public User findOneNotDeletedBy(String id) throws NotFoundEntityException {
 		Optional<User> user = userRepository.findNotDeletedBy(id);
 		if (user.isPresent()) {
 			return user.get();
@@ -99,7 +99,7 @@ public class UserService implements br.org.neverbealone.core.service.Service<Use
 	}
 
 	@Override
-	public User update(User entity, Long id) throws NotFoundEntityException {
+	public User update(User entity, String id) throws NotFoundEntityException {
 		Optional<User> user = userRepository.findNotDeletedBy(id);
 		if (!user.isPresent()) {
 			throw new NotFoundEntityException("User not found!");
@@ -109,7 +109,7 @@ public class UserService implements br.org.neverbealone.core.service.Service<Use
 	}
 
 	@Override
-	public ResponseEntity<?> delete(Long id) {
+	public ResponseEntity<?> delete(String id) {
 		Predicate<User> predicate = e -> e.getDeleted() == null;
 		return userRepository.findById(id).filter(predicate)
 		        .map(record -> {

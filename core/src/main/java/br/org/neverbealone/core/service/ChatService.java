@@ -30,7 +30,7 @@ public class ChatService implements br.org.neverbealone.core.service.Service<Cha
 	}
 
 	@Override
-	public Chat findOneBy(Long id) throws NotFoundEntityException {
+	public Chat findOneBy(String id) throws NotFoundEntityException {
 		Optional<Chat> entity = chatRepository.findById(id);
 		if (entity.isPresent()) {
 			return entity.get();
@@ -40,7 +40,7 @@ public class ChatService implements br.org.neverbealone.core.service.Service<Cha
 	}
 	
 	@Override
-	public Chat findOneNotDeletedBy(Long id) throws NotFoundEntityException {
+	public Chat findOneNotDeletedBy(String id) throws NotFoundEntityException {
 		Optional<Chat> entity = chatRepository.findNotDeletedBy(id);
 		if (entity.isPresent()) {
 			return entity.get();
@@ -56,7 +56,7 @@ public class ChatService implements br.org.neverbealone.core.service.Service<Cha
 	}
 
 	@Override
-	public Chat update(Chat entity, Long id) throws NotFoundEntityException {
+	public Chat update(Chat entity, String id) throws NotFoundEntityException {
 		Optional<Chat> chat = chatRepository.findNotDeletedBy(id);
 		if (!chat.isPresent()) {
 			throw new NotFoundEntityException("Chat not found!");
@@ -66,7 +66,7 @@ public class ChatService implements br.org.neverbealone.core.service.Service<Cha
 	}
 
 	@Override
-	public ResponseEntity<?> delete(Long id) {
+	public ResponseEntity<?> delete(String id) {
 		Predicate<Chat> predicate = e -> e.getDeleted() == null;
 		return chatRepository.findById(id).filter(predicate)
 		        .map(record -> {

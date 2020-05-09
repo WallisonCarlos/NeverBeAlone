@@ -26,8 +26,7 @@ import lombok.ToString;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private Long id;
+	private String id;
 	private String name;
 	private String bio;
 	private String email;

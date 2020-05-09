@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 import br.org.neverbealone.core.model.Chat;
 
 @Repository
-public interface ChatRepository extends JpaRepository<Chat, Long>{
+public interface ChatRepository extends JpaRepository<Chat, String>{
 
 	@Query(value = "SELECT * FROM user WHERE user.id = :id AND user.deleted = \"null\"",
 			nativeQuery = true)
-	public Optional<Chat> findNotDeletedBy(Long id);
+	public Optional<Chat> findNotDeletedBy(String id);
 	@Query(value = "SELECT * FROM user WHERE user.deleted = \"null\"",
 			nativeQuery = true)
 	public List<Chat> findAllNotDeleted();

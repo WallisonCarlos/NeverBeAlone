@@ -30,7 +30,7 @@ public class MessageService implements br.org.neverbealone.core.service.Service<
 	}
 
 	@Override
-	public Message findOneBy(Long id) throws NotFoundEntityException {
+	public Message findOneBy(String id) throws NotFoundEntityException {
 		Optional<Message> entity = messageRepository.findById(id);
 		if (entity.isPresent()) {
 			return entity.get();
@@ -40,7 +40,7 @@ public class MessageService implements br.org.neverbealone.core.service.Service<
 	}
 	
 	@Override
-	public Message findOneNotDeletedBy(Long id) throws NotFoundEntityException {
+	public Message findOneNotDeletedBy(String id) throws NotFoundEntityException {
 		Optional<Message> entity = messageRepository.findNotDeletedBy(id);
 		if (entity.isPresent()) {
 			return entity.get();
@@ -56,7 +56,7 @@ public class MessageService implements br.org.neverbealone.core.service.Service<
 	}
 
 	@Override
-	public Message update(Message entity, Long id) throws NotFoundEntityException {
+	public Message update(Message entity, String id) throws NotFoundEntityException {
 		Optional<Message> message = messageRepository.findNotDeletedBy(id);
 		if (!message.isPresent()) {
 			throw new NotFoundEntityException("Message not found!");
@@ -66,7 +66,7 @@ public class MessageService implements br.org.neverbealone.core.service.Service<
 	}
 
 	@Override
-	public ResponseEntity<?> delete(Long id) {
+	public ResponseEntity<?> delete(String id) {
 		Predicate<Message> predicate = e -> e.getDeleted() == null;
 		return messageRepository.findById(id).filter(predicate)
 		        .map(record -> {

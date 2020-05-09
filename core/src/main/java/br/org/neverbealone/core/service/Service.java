@@ -10,10 +10,10 @@ public interface Service<E> {
 
 	public List<E> findAll();
 	public List<E> findAllNotDeleted();
-	public E findOneNotDeletedBy(Long id) throws NotFoundEntityException ;
-	public E findOneBy(Long id) throws NotFoundEntityException ;
+	public E findOneNotDeletedBy(String id) throws NotFoundEntityException ;
+	public E findOneBy(String id) throws NotFoundEntityException ;
 	public E create(E entity);
-	public E update(E entity, Long id) throws NotFoundEntityException ;
-	public ResponseEntity<?> delete(Long id);
+	public E update(E entity, String id) throws NotFoundEntityException ;
+	public ResponseEntity<?> delete(String id);
 	
 }
